@@ -1,83 +1,86 @@
-// let scrollHeader=function(){} 단축
+//let scrollHeader=function(){}
 let scrollHeader=()=>{
-    let header=document.querySelector('#header');
-  //  console.log(scrollY)
+    let header=document.querySelector("#header");
+    //console.log(scrollY)
     //console.log(pageYOffset)
-    //조건문 ? 참일때 실행문: 거짓일때 실행문
-pageYOffset>=50? 
-header.classList.add('bg-header'):
-header.classList.remove('bg-header')
+    //조건문?참일때실행문:거짓일때실행문;
+    pageYOffset>=50?
+    header.classList.add("bg-header"):
+    header.classList.remove("bg-header");
 }
 // window.addEventListener("scroll",function(){
-//     scrollHeader() 단축
+//     scrollHeader()
 // })
 window.addEventListener("scroll",scrollHeader)
 
-//배경테마 변경
 
+//배경테마변경
 let themeButton=document.querySelector("#change-theme")
-let iconTheme="ri-sun-line"// ri-apps-2-fill
-let darkTheme="dark-theme"
-
-let getCurrnetTheme=()=>{ /* .classList.contains(클래스명) = 클래스명을 가지고 있는가? (true / false)  */
-    let result = document.body.classList.contains(darkTheme)?"dark":"light" /* 참:거짓 (3항연산자) */
-    return result
+let iconTheme="ri-sun-line";//ri-apps-2-line
+let darkTheme="dark-theme";
+let getCurrentTheme=()=>{
+    //.classList.contains(클래스명) --> 클래스명을 가지고 있는가 (true/false)
+    let result= document.body.classList.contains(darkTheme)?"dark":"light";
+   return result;
 }
-
 let getCurrentIcon=()=>{
-    let result=themeButton.classList.contains(iconTheme)?"ri-sun-line":"ri-apps-2-fill";
-    return result
+    let result=themeButton.classList.contains(iconTheme)?"ri-moon-line":"ri-sun-line";
+    return result;
 }
-
-//웹 스토어에 값 셋팅
-//localStorage.setItem(키값) = 웹스토어에 값을 입력
-//localStorage.getItem(키값) = 웹스토어에 값을 가져올때
+//웹 스토어에 값셋팅:
+//localStorage.setItem(키:값)==> 웹스토어에 값을 입력
+//localStorage.getItem(키)==> 웹스토어에 값을 가져올때
 themeButton.addEventListener("click",()=>{
-    /* toggle : 실행과 반실행 */
+    //toggle키 --> 실행과 반실행
     document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    localStorage.setItem("selectid-theme",getCurrnetTheme())
-    localStorage.setItem("selectid-icon",getCurrentIcon())
+    themeButton.classList.toggle(iconTheme);
+    localStorage.setItem("selected-theme",getCurrentTheme())
+    localStorage.setItem("selected-icon",getCurrentIcon())
 })
 
-let seletedTheme=localStorage.getItem("selectid-theme")
-let seletedIcon=localStorage.getItem("selectid-theme")
-console.log(seletedTheme)
 
-if(seletedTheme){
-    if(seletedTheme == "dark"){
+let selectedTheme=localStorage.getItem("selected-theme")
+let selectedIcon=localStorage.getItem("selected-icon")
+console.log(selectedTheme)
+
+if(selectedTheme){
+    if(selectedTheme =="dark"){
         document.body.classList.add(darkTheme);
     }else{
         document.body.classList.remove(darkTheme);
     }
-    if(seletedIcon == "ri-apps-2-fill"){
+
+    if(selectedIcon == "ri-moon-line"){
         themeButton.classList.add(iconTheme)
     }else{
         themeButton.classList.remove(iconTheme)
     }
 }
 
-//모바일에서 메뉴부분
-
+//모바일에서 menu부분
 let navToggle=document.querySelector("#nav_toggle");
 let navMenu=document.querySelector("#nav_menu");
 let navClose=document.querySelector("#nav_close");
+
 
 navToggle.addEventListener("click",function(){
     navMenu.classList.add("show-menu");
 })
 navClose.addEventListener("click",function(){
     navMenu.classList.remove("show-menu");
-   
 })
 
-//scrollup
 
+//scrollUp
 let scrollup=()=>{
-    // let scrollY=scrollY
-    let scrollUp=document.querySelector("#scrollup")
-    pageYOffset>=100?scrollUp.classList.add("show-scroll"):scrollUp.classList.remove("show-scroll")
+    //let scrollY=scrollY
+    //console.log(pageYOffset)
+    let scrollUp=document.querySelector("#scroll-up")
+    pageYOffset>=100?
+    scrollUp.classList.add("show-scroll")
+    :scrollUp.classList.remove("show-scroll");
 }
+
 window.addEventListener("scroll",scrollup)
 
 //전체화면 애니, 각영역으로 이동, 메뉴
@@ -86,8 +89,7 @@ let scrollActive=()=>{
     //let scrollY=pageYOffset
     let scrollYY=scrollY
     //console.log(scrollYY)
-    //let sections=document.querySelectorAll("section[id]")//section태그중 속성 id가 있는것
-    let sections=document.querySelectorAll(".section[id]")
+    let sections=document.querySelectorAll("section[id]")//section태그중 속성 id가 있는것
 
     sections.forEach((current)=>{
         let sectionHeight=current.offsetHeight;//각 section의 높이값
@@ -97,7 +99,7 @@ let scrollActive=()=>{
         //console.log(sectionId)
 
         let sectionClass=document.querySelector(`.nav_menu a[href*="${sectionId}"]`)
-      //  console.log(sectionClass)
+        //console.log(sectionClass)
 
         if(scrollYY>sectionTop && scrollYY <= sectionTop + sectionHeight){
             console.log("실행")
@@ -111,13 +113,15 @@ let scrollActive=()=>{
 //window.addEventListener("scroll",function(){scrollActive();})
 window.addEventListener("scroll",scrollActive)
 
-//영역별 애니메이션
+
+// 영역별 애니메이션
+
 ScrollReveal().reveal('.home_data,.home_img, .about_data, .about_img, .popular_card, .recently_data, .recently_img, .home_leaf-1, .recently_leaf-1, .home_leaf-2, .about_leaf, .recently_leaf-2,.footer_description,.footer_content,.footer_info',{
     distance: '60px',
-    origin: 'top',/* bottom = 아래에서 위로 올라옴 top = 위에서 아래로 내려옴 */
-    duration:2500,
+    origin: 'top',
+    duration: 2500,
     delay:400,
-    reset: true/* 다시반복되는것 화면내려서 다시올리면 또 실행되게 하는것 */
+    reset: true
 });
 ScrollReveal().reveal('.home_data', {
     origin: 'bottom',
