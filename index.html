@@ -1,22 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sushi</title>
-    
-    <!-- favicon -->
-    <link rel="shortcut icon" href="https://img.freepik.com/premium-photo/3d-icon-nigiri-sushi-with-chopstick-3d-illustration-3d-element-3d-rendering-graphic-elements_808921-632.jpg?ga=GA1.1.734410692.1716947082&semt=ais_user" type="image/x-icon">
-<!-- font -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<!-- remix icon -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <title>sushi</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <!-- font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- favicon -->
+    <link rel="shortcut icon"
+        href="https://img.freepik.com/premium-psd/nigiri-fast-food-png-icon-3d-with-transparent-background-website-ui_484256-2093.jpg?ga=GA1.1.1602315954.1716947108&semt=ais_user"
+        type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <header class="header" id="header">
         <nav class="nav container">
@@ -24,19 +26,20 @@
                 <img src="./img/logo.png" alt="logo">
                 Sushi
             </a>
+
             <div class="nav_menu" id="nav_menu">
                 <ul class="nav_list">
                     <li class="nav_item">
-                        <a href="#" class="nav_link">Home</a>
+                        <a href="#home" class="nav_link">Home</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">About us</a>
+                        <a href="#about" class="nav_link">About Us</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">Popular</a>
+                        <a href="#popular" class="nav_link">Popular</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">Recently</a>
+                        <a href="#recently" class="nav_link">recently</a>
                     </li>
                 </ul>
 
@@ -47,25 +50,23 @@
                 <img src="./img/leaf-branch-4.png" alt="nav image" class="nav_img-1">
                 <img src="./img/leaf-branch-3.png" alt="nav image" class="nav_img-2">
 
-            </div>
+            </div><!-- //nav_menu -->
 
             <div class="nav_buttons">
-                <!-- 배경색 바꾸기 낮,밤 -->
-                <i class="ri-moon-fill change-theme" id="change-theme"></i>
-                <!-- 메뉴보이기 -->
+                <!-- 배경색 바꾸기 -->
+                <i class="ri-moon-line change-theme" id="change-theme"></i>
+                <!-- 메뉴 보이기 -->
                 <div class="nav_toggle" id="nav_toggle">
-                     <i class="ri-apps-2-fill"></i>
+                    <i class="ri-apps-2-line"></i>
                 </div>
-               
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         <section class="home section" id="home">
             <div class="home_container container grid">
-                <img src="img/home-sushi-rolls.png" alt="home img" class="home_img"
-                >
+                <img src="img/home-sushi-rolls.png" alt="home img" class="home_img">
                 <div class="home_data">
                     <h1 class="home_title">
                         Enjoy Delicious
@@ -73,18 +74,19 @@
                             <img src="img/home-sushi-title.png" alt="sushi-title">
                             sushi Food
                         </div>
-                    </h1><!-- end home_title -->
+                    </h1><!-- home_title -->
                     <p class="home_description">
                         Enjoy a good dinner with the best dishes in the restaurant and improve your day.
                     </p>
                     <a href="#" class="button">
                         Order Now <i class="ri-arrow-right-line"></i>
                     </a>
-                </div><!-- end home_data -->
-            </div><!-- end home_container -->
+                </div><!-- home_data -->
+            </div><!-- home_container -->
             <img src="img/leaf-branch-2.png" alt="leaf-branch-2" class="home_leaf-1">
             <img src="img/leaf-branch-4.png" alt="leaf-branch-4" class="home_leaf-2">
         </section>
+
         <section class="about section" id="about">
             <div class="about_container container grid">
                 <div class="about_data">
@@ -92,19 +94,18 @@
                     <h2 class="section_title about-title">
                         <div>
                             We Provide
-                            <img src="./img/about-sushi-title.png" alt="about_sushi">
+                            <img src="./img/about-sushi-title.png" alt="about-sushi">
                         </div>
-                        Healthy Food 
+                        Healthy Food
                     </h2>
-                        <p class="about_description">
-                            Food comes to us from our relatives, whether they have wings or
-                            roots. This is how we consider food, it also has a culture. It has
-                            a history that passes from generation to generation.
-                        </p>
+                    <p class="about_description">
+                        Food comes to us from our relatives, whether they have wings or
+                        roots. This is how we consider food, it also has a culture. It has
+                        a history that passes from generation to generation.
+                    </p>
 
-                   
-                </div><!-- end about_data -->
-                <img src="./img/about-sushi.png" alt="about-sushi" class="about_img">
+                </div><!-- about_data -->
+                <img src="img/about-sushi.png" alt="about-sushi" class="about_img">
             </div>
             <img src="./img/leaf-branch-1.png" alt="about_leaf" class="about_leaf">
         </section>
@@ -113,12 +114,10 @@
             <span class="section_subtitle">
                 The Best Food
             </span>
-            <h2 class="section_title">
-                Popular Dishes
-            </h2>
+            <h2 class="section_title">Popular Dishes</h2>
             <div class="popular_container container grid">
                 <ariticle class="popular_card">
-                    <img src="./img/popular-onigiri.png" alt="popular-onigiri" class="popular_img">
+                    <img src="img/popular-onigiri.png" alt="popular-onigiri" class="popular_img">
                     <h3 class="popular_name">Onigiri</h3>
                     <span class="popular_description">Japanese Dish</span>
                     <span class="popular_price">$10.99</span>
@@ -145,7 +144,9 @@
                     </button>
                 </article><!-- .popular_card end -->
             </div>
-        </section>        
+
+        </section>
+
         <section class="recently section" id="recently">
             <div class="recently_container container grid">
                 <div class="recently_data">
@@ -190,6 +191,7 @@
             </div><!-- .newsletter_container .container end-->
         </section><!-- .newsletter .section #newsletter-->
     </main>
+
     <footer class="footer">
         <div class="footer_container container grid">
             <div>
@@ -213,7 +215,6 @@
                         <li><a href="#" class="footer_link">Events</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h3 class="footer_title">information</h3>
                     <ul class="footer_links">
@@ -279,13 +280,12 @@
             </div>
         </div><!-- .footer_info .container end -->
     </footer>
-    
     <!-- scroll up -->
-    <a href="#home" class="scrollup" id="scrollup">
-        <i class="ri-arrow-up-circle-line"></i>
+    <a href="#home" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
     </a>
-    
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 </body>
+
 </html>
